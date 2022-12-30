@@ -7,18 +7,19 @@ import {getProductList,getProductData} from "./api.jsx"
 import FinalMap from "./FinalMap.jsx"
 
 function Product({productList}){
-  
-  const [jan,setjan]=useState(productList);
-  function handlechange(event){
-     
-   let searched= event.target.value
-      productList=(productList.filter(function(items){
-       return(items.title.indexOf(searched) != -1);
+
+
+ const [searched1,setsearched1]=useState("")
+  let data=productList.filter(function (item){
+return item.title.indexOf(searched1) != -1;
     
-     }))
-    return (<>{ setjan(productList)};
-      {console.log("jaan is",jan)}
-    </>)
+  })
+  
+
+  
+  
+  function handlechange(event){
+        return (setsearched1(event.target.value))
       }
   
  const [sort,setsort]=useState("default")
@@ -27,22 +28,22 @@ function Product({productList}){
       }
 
   if(sort=="lowtohigh"){
-    productList.sort(function(x,y){
+    data.sort(function(x,y){
       return(x.price-y.price)
     })
   }
   if(sort=="hightolow"){
-    productList.sort(function(x,y){
+    data.sort(function(x,y){
       return(y.price-x.price)
     })
   }
   if(sort=="atoz"){
-    productList.sort(function(x,y){
+    data.sort(function(x,y){
       return(x.title<y.title)?-1:1
     })
   }
   if(sort=="ztoa"){
-   productList.sort(function(x,y){
+   data.sort(function(x,y){
       return(x.title<y.title)?1:-1
     })
   }
@@ -60,13 +61,13 @@ return(<>
 </select>
  </div> 
   <div >
+   <FinalMap newproductList={data}/>
     
-    <FinalMap productList={productList}/>
+    {console.log("jo map ko jari h list vo ye h",data )}
     <button className="border border-star text-star w-6 h-6 text-xl mx-1">1</button>
     <button className="border border-star text-star w-6 h-6 text-xl mx-1">2</button>
-</div>)
-  
-    })}
+</div>
+ 
 
 </>)
   

@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import {HiArrowLeft} from "react-icons/hi";
 import {Routes,Route} from "react-router-dom";
 import {Link} from "react-router-dom";
@@ -6,17 +6,21 @@ import {useParams} from "react-router-dom";
 import {ImArrowLeft,ImArrowRight} from "react-icons/im"
 import DetailImages from "./DetailImages.jsx"
 import {TbFidgetSpinner} from "react-icons/tb" ;
-import {useState} from "react";
-function ProductDetail({productData,onAddtoCart,id}){
 
- 
+function ProductDetail({productData,onAddtoCart,id}){
+  
+
+
 
   if (!productData){
     return (<div className="items-center text-9xl">
+     
+      
       <p >loading...</p>
            <TbFidgetSpinner className="text-spin-size animate-spin" />
-
+ 
     </div > )
+   
   };
 
   const [count,setcount]=useState(1);
@@ -31,6 +35,8 @@ function handlecart(){
  }
 
 
+
+  
   
   
 return(<div className=" ">
@@ -38,18 +44,24 @@ return(<div className=" ">
   <HiArrowLeft  className="text-2xl"/>
     
 </Link>
-  <div className="flex">
+  <div className="flex h-96">
 < DetailImages productData={productData}/>
     <div className="mx-6">
      <div >
   <h1 className="text-gray-400" >{productData.brand}</h1>
- 
-   <p>{productData.description}</p>
-   <h1 className="font-black text-2xl">Rs {productData.price} </h1>
-       <input value={count} type="number" onChange={handleCount} className="w-9 border border-gray-200" />
+ <h2 className="text-gray-900 " >{productData.title}</h2>
+      <h1 className="font-black text-2xl">Rs {productData.price} </h1>
+       <p>{productData.description}</p>
+       <input value={count} type="number" onChange={handleCount} className="border border-gray-200 w-8" />
        <button onClick={handlecart} className="bg-tomato px-4 mx-2 border-tomato text-white border rounded-md " >add to cart</button>
        </div>
-    <p className="mt-4" >{productData.title}</p>
+      <div className="h-px bg-gray-300 my-3 flex flex-row"></div>
+         <div className=" flex flex-row">                                                   
+      <p className="">category: </p>
+    <Link to="" className="text-tomato underline decoration-solid hover:no-underline" >{productData.category}</Link>
+
+           </div> 
+      
     </div>
     </div>
  
@@ -63,3 +75,6 @@ return(<div className=" ">
 
 
 export default ProductDetail;
+
+// const [kml,setkml]=useState(3);
+ // {setkml(6)}

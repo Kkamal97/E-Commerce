@@ -4,7 +4,7 @@ import {useState,useEffect} from "react";
 import {getProductList,getProductData} from "./api.jsx";
 import Products from "./Products";
 import {TbFidgetSpinner} from 'react-icons/tb';
-function AllData({onAddtoCart}){
+function AllData({onAddtoCart,cartvalues}){
   
   const [productList,setproductList]=useState([]);
 
@@ -27,7 +27,7 @@ useEffect(function(){
   return (<div className="place-content-center my-4">
  
     
-    <Products productList={productList} onAddtoCart={onAddtoCart}/>
+    <Products productList={productList} cartvalues={cartvalues} onAddtoCart={onAddtoCart}/>
   </div>)
 
 

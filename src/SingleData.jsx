@@ -19,8 +19,12 @@ const [productData,setproductData]=useState();
   p.then(function(response){
     return(setproductData(response.data))
     console.log("ek product ka data",response.data);
-  }
-       )},[id])
+  }).catch (function (tumri){
+const kk=35;
+  return(<p>abhi to loading hora h re</p>)
+  
+});
+       },[id])
   return (<div className="flex flex-col">
     <ProductDetail productData={productData} id={id} onAddtoCart={onAddtoCart}/>
 
@@ -43,8 +47,6 @@ const [productData,setproductData]=useState();
         </div>
 </div>
     
-  </div>
-  )
-}
-
+  </div>)
+  }
 export default SingleData;
