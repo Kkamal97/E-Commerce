@@ -1,11 +1,14 @@
 import React from "react";
 import { BsBag } from "react-icons/bs";
 import {Link} from "react-router-dom";
-
+import photuk from "./Notfoundimage.jpg";
+import logo from "./log.jpg";
 function TopNavbar({counter}){
 return(<div className="bg-white"  >
   <div className="flex max-w-3xl md:max-w-4xl   mx-auto">
      <img className="w-20 self-start   " src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzygE5b6mHX_-NHLPR710sMAXreiByGlg9cg&usqp=CAU"/>
+    <img className="w-20 self-start   " src={logo}/>
+     <img className="w-20 self-start   " src={photuk}/>
    
       <span className="grow"></span>
     <Link to="/cart" >
