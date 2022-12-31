@@ -11,7 +11,7 @@ return (<div className="bg-white md:max-w-4xl max-w-3xl mx-auto px-3 py-2 md:px-
   <Routes>
     <Route path="/" element={<Product productList={productList}/>}></Route>
     <Route path="/productdetail/:xyz" element={<SingleData onAddtoCart={onAddtoCart}/>}></Route>
-    
+    <Route path="/cart" element={<Cart cartvalues={cartvalues}/>}/>
  
 
 </Routes>
@@ -24,4 +24,4 @@ export default Products;
 //  <Route path="/ProductDetail/:sku" element={<ProductDetail data={alldata}/>}></Route>
 
 
-// <Route path="/cart" element={<Cart cartvalues={cartvalues}/>}/>
+// 

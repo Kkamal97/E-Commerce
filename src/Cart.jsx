@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 import {getProductData} from "./api.jsx";
 function Cart({cartvalues}){
 
-const cartkey= Object.keys(cartvalues);
+ const cartkey= Object.keys(cartvalues);
 
    
 const cartarray=[]
