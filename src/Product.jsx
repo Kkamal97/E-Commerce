@@ -63,7 +63,7 @@ return(<>
   <div >
    <FinalMap newproductList={data}/>
     
-    {console.log("jo map ko jari h list vo ye h",data )}
+   
     <button className="border border-star text-star w-6 h-6 text-xl mx-1">1</button>
     <button className="border border-star text-star w-6 h-6 text-xl mx-1">2</button>
 </div>

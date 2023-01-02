@@ -32,9 +32,7 @@ function DetailImages({productData}){
 
 export default DetailImages;
 
-// <img src={productData.images[(productData.images.length)-2]}/>
-    // <img src={productData.images[(productData.images.length)-3]}/>
-    // <img src={productData.images[(productData.images.length)-4]}/>
+
 
 // < AiOutlineRight className="text-3xl"/>
 // < AiOutlineLeft className="text-3xl text-gray-800" />

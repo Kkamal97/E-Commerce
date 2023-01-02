@@ -6,11 +6,10 @@ import {useParams} from "react-router-dom";
 import {ImArrowLeft,ImArrowRight} from "react-icons/im"
 import DetailImages from "./DetailImages.jsx"
 import {TbFidgetSpinner} from "react-icons/tb" ;
+import Button from "./Button";
 
 function ProductDetail({productData,onAddtoCart,id}){
   
-
-
 
   if (!productData){
     return (<div className="items-center text-9xl">
@@ -22,6 +21,8 @@ function ProductDetail({productData,onAddtoCart,id}){
     </div > )
    
   };
+
+
 
   const [count,setcount]=useState(1);
 
@@ -53,7 +54,7 @@ return(<div className=" ">
       <h1 className="font-black text-2xl">Rs {productData.price} </h1>
        <p>{productData.description}</p>
        <input value={count} type="number" onChange={handleCount} className="border border-gray-200 w-8" />
-       <button onClick={handlecart} className="bg-tomato px-4 mx-2 border-tomato text-white border rounded-md " >add to cart</button>
+       <Button onClick={handlecart}  >add to cart</Button>
        </div>
       <div className="h-px bg-gray-300 my-3 flex flex-row"></div>
          <div className=" flex flex-row">                                                   
@@ -75,6 +76,4 @@ return(<div className=" ">
 
 
 export default ProductDetail;
-
-// const [kml,setkml]=useState(3);
- // {setkml(6)}
+ 

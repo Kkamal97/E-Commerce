@@ -1,6 +1,8 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import { AiOutlineStar } from 'react-icons/ai';
+import { BiLinkExternal } from 'react-icons/bi';
+
 function DisplayProduct({thumbnail,category,title,price,id}){
 
 
@@ -14,7 +16,11 @@ function DisplayProduct({thumbnail,category,title,price,id}){
   <div className="text-star flex flex-row">
   <AiOutlineStar/><AiOutlineStar/><AiOutlineStar/><AiOutlineStar/><AiOutlineStar/>
     </div>
-  <Link className="text-green-700" to={"/productdetail/" + id} >view detail</Link>
+  <Link className="text-green-700 flex items-center" to={"/productdetail/" + id} >view detail    
+
+    <BiLinkExternal/>
+  
+  </Link>
 </div>)
 
     
