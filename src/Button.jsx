@@ -1,8 +1,8 @@
 import React,{memo} from "react";
-function Button({className,children}){
+function Button({className,children,type,onClick}){
 
 return (
-  <button className="bg-tomato px-4 mx-2 border-tomato text-white border rounded-md " >{children}</button>
+  <button type={type} onClick={onClick} className="bg-tomato px-4 mx-2 border-tomato text-white border rounded-md " >{children}</button>
 )
   
 }

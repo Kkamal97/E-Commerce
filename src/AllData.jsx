@@ -12,8 +12,7 @@ useEffect(function(){
   const xyz=getProductList();
   xyz.then(function(response){
      setproductList(response.data.products);
-   console.log("ye rha list",response.data.products);
-  })
+    })
  
 },[])
 

@@ -16,8 +16,7 @@ function App({productList}) {
 
   
 function handleAddToCart(productId,count){
-console.log("app js me add me jo add hua h vo ye h productid",productId,"count is",count);
-  // settotalcount(totalcount+count);
+   // settotalcount(totalcount+count);
 const oldcount=cart[productId] || 0;
   const newcart = {...cart,[productId]:oldcount + count};
   const cartsave=JSON.stringify(newcart);
@@ -32,12 +31,11 @@ const oldcount=cart[productId] || 0;
   // newcart[productId]=oldcount+ count;
   // setcart(cart); 
 }  
- console.log("cart me ye sb h",cart)
+  
 
 let totalcount;
   
   if (Object.keys(cart).length>0){
-    console.log("if se phle wali list")
  totalcount= Object.keys(cart).reduce(function(previous,current){
 return( 
   
@@ -46,7 +44,6 @@ return(
   }
 else {
  totalcount=0;
-  console.log("storage wali list running")
 }
   
   
