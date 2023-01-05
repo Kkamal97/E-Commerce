@@ -68,7 +68,7 @@ return(<div className="">
         }
         {console.log("cart ye h",cartlist)}
 
-        
+        <p>hello</p>
     <h3>{item.title}</h3>
 <h3>{  }</h3>
 <h3>{item.qty}</h3>
