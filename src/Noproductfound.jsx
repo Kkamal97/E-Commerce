@@ -1,10 +1,11 @@
 import React from "react";
-import Notfoundimage from "./Notfoundimage.jsx"
+import Notfoundimage from "./Notfoundimage.jpg"
 function Noproductfound(){
 
 
 return(<>
-<img className="w-40" src={Notfoundimage}/>
+<p>this does not exists</p>
+<img className="w-full" src={Notfoundimage}/>
 
 
 </>
@@ -13,4 +14,6 @@ return(<>
 
   
 }
+
+export default Noproductfound;
 

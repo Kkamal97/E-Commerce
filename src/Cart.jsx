@@ -10,7 +10,7 @@ function Cart({cartvalues}){
 const cartarray=[]
   for(let i=0; i<cartkey.length; i++){
 
-
+//just try
     
     console.log("values ye h re", cartkey[i]);
    const gg4=cartkey[i];
@@ -41,7 +41,7 @@ return(<div className="">
 <Link to="/">
 <BiHomeHeart className="text-3xl hover:text-gray-400" /> 
   </Link>
-  <div className="w-full flex flex-col justify-around" >
+  <div className="flex flex-col justify-around w-full" >
     <div className="flex flex-row justify-around font-black" >
    
     <h3>illustrations </h3>

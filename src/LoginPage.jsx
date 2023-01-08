@@ -21,9 +21,9 @@ const {handleChange,values,handleSubmit,resetForm}=useFormik({
   <form onSubmit={handleSubmit} >
   <div className="flex flex-col items-start space-y-1.5 border px-4 py-6 border-gray-400 rounded-md">
      <label htmlFor="email" className="sr-only">Email</label>
-         <input value={values.email} onChange={handleChange} className=" relative block appearance-none focus:red-800 focus:outline-none focus-ring-indigo-500 border border-gray-400 w-full h-10 placeholder-gray-300" type="email" placeholder="email" autoComplete="email" name="email"/>
+         <input value={values.email} onChange={handleChange} className="relative block w-full h-10 placeholder-gray-300 border border-gray-400 appearance-none focus:red-800 focus:outline-none focus-ring-indigo-500" type="email" placeholder="email" autoComplete="email" name="email"/>
      <label htmlFor="password" className="sr-only">Password</label>
-         <input value={values.password}  onChange={handleChange} className="border border-gray-400 w-full h-10 placeholder-gray-300 " type="password"  placeholder="password" autoComplete="current-password" name="password"/>
+         <input value={values.password}  onChange={handleChange} className="w-full h-10 placeholder-gray-300 border border-gray-400 " type="password"  placeholder="password" autoComplete="current-password" name="password"/>
   
     <div className="flex flex-row">
     <div>
