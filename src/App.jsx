@@ -2,6 +2,10 @@ import React,{useEffect} from 'react';
 import AllData from "./AllData";
 import TopNavbar from "./TopNavbar";
 import {useState} from "react";
+import { useContext } from 'react';
+
+
+export const kamalcontext=React.createContext();
 
 function App({productList}) {
 
@@ -45,14 +49,14 @@ return(
 else {
  totalcount=0;
 }
+const cartvalues={cart};
   
-  
-  return (<div className="bg-backcolor flex flex-col ">
+  return (<div className="flex flex-col bg-backcolor ">
     
      <TopNavbar counter={totalcount}/>
-   
+   <kamalcontext.Provider value={cartvalues}>
 <AllData  className="grow" onAddtoCart={handleAddToCart} cartvalues={cart} />
-   
+</kamalcontext.Provider> 
    
    
     

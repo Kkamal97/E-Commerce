@@ -13,9 +13,9 @@ return(<div className="bg-white"  >
     <div className="self-center mx-3 space-x-6 ">
 <Link to="/" className="hover:text-orange-400">HOME</Link>
 <Link to="/Products" className="hover:text-blue-400">ALL PRODUCTS</Link>
-<Link to="/" className="hover:text-orange-400">ABOUT</Link>
+<Link to="/AboutUs" className="hover:text-orange-400">ABOUT</Link>
 <Link to="/" className="hover:text-orange-400">CONTACT</Link>
-<Link to="/my-account" className="hover:text-orange-400">ACCOUNT</Link>
+<Link to="/account" className="hover:text-orange-400">ACCOUNT</Link>
   </div>   
     <Link to="/cart" >
     <div className="flex flex-col items-center ">
