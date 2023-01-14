@@ -12,8 +12,7 @@ import SignupPage from  "./SignupPage.jsx";
 import AboutUs from "./AboutUs.jsx";
 
 function Products({productList,onAddtoCart,cartvalues}){
-return (<div className="max-w-3xl px-3 py-2 mx-auto overflow-y-scroll bg-white md:max-w-4xl md:px-7 md:py-5">
-   
+return (<div className="max-w-3xl mx-auto bg-white md:max-w-4xl ">
   <Routes>
     <Route path="/" element={<HomePage/>}/>
     <Route path="/Products" element={<Product productList={productList}/>}></Route>
@@ -32,6 +31,6 @@ return (<div className="max-w-3xl px-3 py-2 mx-auto overflow-y-scroll bg-white m
 }
 export default Products;
 //  <Route path="/ProductDetail/:sku" element={<ProductDetail data={alldata}/>}></Route>
-
+// max-w-3xl px-3 py-2 mx-auto overflow-y-scroll bg-white md:max-w-4xl md:px-7 md:py-5"
 
 // 

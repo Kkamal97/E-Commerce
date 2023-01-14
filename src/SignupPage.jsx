@@ -32,7 +32,7 @@ validationSchema:schema,
 return(<div className="flex flex-col">
 <form onSubmit={handleSubmit}>
     <div className="flex flex-col">
-<input value={values.firstName} onChange={handleChange} name="firstName" type="text" className="" placeholder="first Name"/>
+<input value={values.firstName} onChange={handleChange} name="firstName" type="text" className="border border-green-500" placeholder="first Name"/>
 <input value={values.lastname} onChange={handleChange} name="lastName" type="text" className="" placeholder="last Name"/>
 <input value={values.emailadd} onChange={handleChange} name="emailadd" type="email" className="" placeholder="email address"/>
 <input value={values.createpass} onChange={handleChange} type="password" name="createpass" placeholder="create a password"></input>

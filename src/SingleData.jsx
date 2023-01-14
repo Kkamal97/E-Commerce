@@ -31,18 +31,18 @@ const kk=35;
 <span className="grow"></span>
 
     
-    <div className="flex text-purple-900 justify-between">
+    <div className="flex justify-between text-purple-900">
       <div>
       {id>0 &&
-      <Link to={"/ProductDetail/"+(id-1)} className="flex mx-2 justify-start items-center">
-  <ImArrowLeft className="text-4xl mx-2"/>previous
+      <Link to={"/ProductDetail/"+(id-1)} className="flex items-center justify-start mx-2">
+  <ImArrowLeft className="mx-2 text-4xl"/>previous
   </Link>}
         </div>
       <div>
       {id<100 &&
-  <Link to={"/ProductDetail/"+(id+1)} className="flex mx-2 justify-start items-center">
+  <Link to={"/ProductDetail/"+(id+1)} className="flex items-center justify-start mx-2">
     next
-  <ImArrowRight className="text-4xl mx-2"/>
+  <ImArrowRight className="mx-2 text-4xl"/>
   </Link>}
         </div>
 </div>

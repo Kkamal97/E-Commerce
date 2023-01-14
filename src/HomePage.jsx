@@ -1,14 +1,19 @@
 import React from "react";
-import lotusimage from "./lotus.jpg"
+import lotusimage from "./lotus.jpg";
+import {Link} from "react-router-dom";
 function HomePage(){
     return(
         <div className="">
-        <div className="">
-        <h3 className="font-black">Best quality products</h3>
-        <h2>We deliver everything at your doorstep</h2>
-        <h1>i am not telling the css </h1>
+        
+        <div>
+        <img className="w-full" src={lotusimage}/>
         </div>
-        <img className="max-w-4" src={lotusimage}/>
+        <div className="text-center -my-80">
+        <h3 className="text-4xl font-black text-gray-800">BEST QUALITY PRODUCTS</h3>
+       
+        <Link to="/Products" className="text-center underline">Shop now</Link>
+       
+               </div>
         </div>
     )
 }
