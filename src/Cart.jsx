@@ -2,6 +2,7 @@ import React,{useEffect,useState} from "react";
 import {BiHomeHeart } from "react-icons/bi"
 import {Link} from "react-router-dom";
 import {getProductData} from "./api.jsx";
+import kamalcontext from "./App.jsx";
 function Cart({cartvalues}){
 
  const cartkey= Object.keys(cartvalues);

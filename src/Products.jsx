@@ -17,7 +17,7 @@ return (<div className="max-w-3xl mx-auto bg-white md:max-w-4xl ">
     <Route path="/" element={<HomePage/>}/>
     <Route path="/Products" element={<Product productList={productList}/>}></Route>
     <Route path="/productdetail/:xyz" element={<SingleData onAddtoCart={onAddtoCart}/>}></Route>
-    <Route path="/cart" element={<Cart cartvalues={cartvalues}/>}/>
+    <Route path="/cart" element={<Cart />}/>
  <Route path="/account/*" element={<Account/>}/>
  <Route path="*" element={<Noproductfound/>}> </Route>
  <Route path="/account/Login" element={<LoginPage/>} />

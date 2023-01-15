@@ -48,11 +48,11 @@ return item.title.indexOf(searched1) != -1;
     })
   }
     
-return(<>
+return(<div className="py-3">
   <div className="flex flex-row">
-  <input placeholder="search items" onChange={handlechange} className="border border-gray-900 mx-3 text-center rounded-md text-sm"/>
+  <input placeholder="search items" onChange={handlechange} className="mx-3 text-sm text-center border border-gray-900 rounded-md"/>
     <span className="grow"></span>
-<select onChange={handlesortchange} className="border border-gray-400 rounded-md text-sm mx-10">
+<select onChange={handlesortchange} className="mx-10 text-sm border border-gray-400 rounded-md">
   <option value="default">sort by default</option>
 <option value="lowtohigh">sort by price low to high</option>
   <option value="hightolow">sort by price high to low</option>
@@ -64,12 +64,12 @@ return(<>
    <FinalMap newproductList={data}/>
     
    
-    <button className="border border-star text-star w-6 h-6 text-xl mx-1">1</button>
-    <button className="border border-star text-star w-6 h-6 text-xl mx-1">2</button>
+    <button className="w-6 h-6 mx-1 text-xl border border-star text-star">1</button>
+    <button className="w-6 h-6 mx-1 text-xl border border-star text-star">2</button>
 </div>
  
 
-</>)
+</div>)
   
 }
 

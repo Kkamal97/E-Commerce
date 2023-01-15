@@ -11,13 +11,14 @@ return(<div className="items-center text-center ">
     <img className="mx-auto w-80" src={tableicon}/>
     {/* <BsCartPlus className="mx-auto text-9xl"/> */}
    
-    <p>Already have account</p>
-    <span>
-        <a href="/account/Login" className="text-blue-400 underline hover:text-orange-700 hover:no-underline"> log in</a>
-        </span>
-        <p>new to bubuddy</p>
-    <Link className="text-blue-400 underline hover:text-orange-700 hover:no-underline " to="/account/Signup">signup</Link>
-
+    <p>Already have account   
+     
+        <a href="/account/Login" className="text-blue-400 underline hover:text-orange-700 hover:no-underline">         log in</a>
+        
+        </p>
+        <p>new to bubuddy
+    <Link className="text-blue-400 underline hover:text-orange-700 hover:no-underline " to="/account/Signup"> signup</Link>
+    </p>
 
     </div>)
 

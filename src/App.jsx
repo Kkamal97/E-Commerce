@@ -55,7 +55,7 @@ const cartvalues={cart};
     
      <TopNavbar counter={totalcount}/>
    <kamalcontext.Provider value={cartvalues}>
-<AllData  className="grow" onAddtoCart={handleAddToCart} cartvalues={cart} />
+<AllData  className="grow" onAddtoCart={handleAddToCart}  />
 </kamalcontext.Provider> 
    
    

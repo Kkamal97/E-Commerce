@@ -26,7 +26,7 @@ useEffect(function(){
   return (<div className="place-content-center my-4">
  
     
-    <Products productList={productList} cartvalues={cartvalues} onAddtoCart={onAddtoCart}/>
+    <Products productList={productList}  onAddtoCart={onAddtoCart}/>
   </div>)
 
 
