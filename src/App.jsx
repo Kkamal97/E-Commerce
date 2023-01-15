@@ -49,12 +49,13 @@ return(
 else {
  totalcount=0;
 }
-const cartvalues={cart};
-  
+const cartvalues=cart;
+ 
   return (<div className="flex flex-col bg-backcolor ">
     
      <TopNavbar counter={totalcount}/>
    <kamalcontext.Provider value={cartvalues}>
+    { console.log("ye rha",cartvalues)}
 <AllData  className="grow" onAddtoCart={handleAddToCart}  />
 </kamalcontext.Provider> 
    

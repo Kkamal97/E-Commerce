@@ -1,49 +1,62 @@
 import React from "react";
+import { useFormik } from "formik";
 import Button from "./Button";
-import { Link } from "react-router-dom";
-import {useFormik} from "Formik";
+import Input from "./Input";
 import * as yup from "yup";
-function SignupPage(){
+import { Link } from "react-router-dom";
+import tableicon from "./clipart.png";
+function signupPage(){
 
-function handleSendingApi(e){
-        console.log("sending re ho jayegsa",values.firstName,values.lastName,values.emailadd,"& passwords are",values.createpass,values.confirmpass)
-}
-
+   function signupApi(values){
+    
+        console.log("sending la",values.firstname)
+    }
 const schema=yup.object().shape({
-    firstName:yup.string(),
-    lastName:yup.string(),
+    firstname:yup.string().min(4),
+    lastname:yup.string().min(4),
     emailadd:yup.string().email(),
-    createpass:yup.string().min(8).max(12),
-    createpass:yup.string().min(8).max(12),
+    password:yup.string().min(8),
+    confirmpassword:yup.string().min(6),
 })
 
-const {handleSubmit,handleChange,values,errors}=useFormik({
-    initialValues:
-    {firstName:"",
-lastName:"",
-emailadd:"",
-createpass:"",
-confirmpass:"",
-},
-onSubmit:handleSendingApi,
-validationSchema:schema,
-})
+const {values,
+    errors,
+    touched,
+    handleChange,
+    handleBlur,
+    handleSubmit,
+    isSubmitting,}=useFormik({
+        initialValues:{
+            firstname:"",
+            lastname:"",
+            emailadd:"",
+            password:"",
+            confirmpassword:"",
+        },
+        onSubmit:signupApi,
+        validationSchema:schema,
+    }
 
-return(<div className="flex flex-col">
-<form onSubmit={handleSubmit}>
-    <div className="flex flex-col">
-<input value={values.firstName} onChange={handleChange} name="firstName" type="text" className="border border-green-500" placeholder="first Name"/>
-<input value={values.lastname} onChange={handleChange} name="lastName" type="text" className="" placeholder="last Name"/>
-<input value={values.emailadd} onChange={handleChange} name="emailadd" type="email" className="" placeholder="email address"/>
-<input value={values.createpass} onChange={handleChange} type="password" name="createpass" placeholder="create a password"></input>
-<input value={values.confirmpass} onChange={handleChange} type="password" name="confirmpass" placeholder="confirm the password" ></input>
+    )
 
-<Button type="submit">signup</Button>
+    return(<>
+    <img className="mx-auto w-96" src={tableicon}/>
+    <form onSubmit={handleSubmit}>
+<div className="flex flex-col space-y-2 mx-auto items-center">
+<Input touched={touched.firstname} error={ errors.firstname} value={values.firstname} name="firstname" type="text" id="namu" placeholder="first name" onChange={handleChange} onBlur={handleBlur}/>
+<Input touched={touched.lastname} error={ errors.lastname} value={values.lastname} name="lastname" type="text" id="jale" placeholder="last name" onChange={handleChange} onBlur={handleBlur}/>
+<Input touched={touched.emailadd} error={ errors.emailadd} value={values.emailadd} name="emailadd" type="email" id="tujale" placeholder="email address" onChange={handleChange} onBlur={handleBlur} />
+<Input touched={touched.password} error={ errors.password} value={values.password} name="password" type="password" id="putt" placeholder="create password" onChange={handleChange} onBlur={handleBlur} />
+<Input touched={touched.confirmpassword} error={ errors.confirmpassword} value={values.confirmpassword} name="confirmpassword" type="password"  id="jojo" placeholder="confirm password" onChange={handleChange} onBlur={handleBlur} />
+<Button type="submit">Sign Up</Button>
 </div>
 </form>
-<Link to="/account/Login">already account login</Link>
-</div>
-)
+<p>
+    have already account
+<Link className="underline hover:no-underline hover:text-orange-700" to="/account/Login"> log in </Link>
+</p>
 
+    </>
+    )
 }
-export default SignupPage;
+export default signupPage;

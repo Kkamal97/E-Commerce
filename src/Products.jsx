@@ -10,6 +10,7 @@ import HomePage from "./HomePage.jsx";
 import LoginPage from "./LoginPage.jsx";
 import SignupPage from  "./SignupPage.jsx";
 import AboutUs from "./AboutUs.jsx";
+import Passwordreset from "./Passwordreset.jsx";
 
 function Products({productList,onAddtoCart,cartvalues}){
 return (<div className="max-w-3xl mx-auto bg-white md:max-w-4xl ">
@@ -23,6 +24,7 @@ return (<div className="max-w-3xl mx-auto bg-white md:max-w-4xl ">
  <Route path="/account/Login" element={<LoginPage/>} />
  <Route path="/account/Signup" element={<SignupPage/>}/>
  <Route path="/AboutUs" element={<AboutUs/>}/>
+ <Route path="/account/forgotpassword" element={<Passwordreset/>}/>
 </Routes>
   
  
