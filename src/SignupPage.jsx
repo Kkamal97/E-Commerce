@@ -1,7 +1,7 @@
 import React from "react";
 import { useFormik } from "formik";
 import Button from "./Button";
-import Input from "./Input";
+import Input from "./FormikInput.jsx";
 import * as yup from "yup";
 import { Link } from "react-router-dom";
 import tableicon from "./clipart.png";

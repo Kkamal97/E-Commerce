@@ -6,6 +6,7 @@ import { useContext } from 'react';
 
 
 export const kamalcontext=React.createContext();
+export const jolo=React.createContext();
 
 function App({productList}) {
 
@@ -18,24 +19,25 @@ function App({productList}) {
   
   const[cart,setcart]=useState(oldcartobj);
 
-  
+ 
 function handleAddToCart(productId,count){
    // settotalcount(totalcount+count);
 const oldcount=cart[productId] || 0;
   const newcart = {...cart,[productId]:oldcount + count};
-  const cartsave=JSON.stringify(newcart);
-  localStorage.setItem("my-cart",cartsave);
- setcart(newcart);
-
+  UpdateCart(newcart);
 
   
- 
-  
+
   // const newcart={...cart};
   // newcart[productId]=oldcount+ count;
   // setcart(cart); 
 }  
-  
+
+function UpdateCart(newcart){
+  const cartsave=JSON.stringify(newcart);
+  localStorage.setItem("my-cart",cartsave);
+ setcart(newcart);
+ }
 
 let totalcount;
   
@@ -50,17 +52,11 @@ else {
  totalcount=0;
 }
 const cartvalues=cart;
- 
-  return (<div className="flex flex-col bg-backcolor ">
-    
+  return (<div className="flex flex-col bg-backcolor "> 
      <TopNavbar counter={totalcount}/>
-   <kamalcontext.Provider value={cartvalues}>
-    { console.log("ye rha",cartvalues)}
-<AllData  className="grow" onAddtoCart={handleAddToCart}  />
-</kamalcontext.Provider> 
-   
-   
-    
+   <kamalcontext.Provider value={cartvalues}>          
+<AllData  className="grow" onAddtoCart={handleAddToCart} updatecart={UpdateCart} />
+</kamalcontext.Provider>    
   </div>
   );
 }

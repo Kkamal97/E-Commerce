@@ -1,10 +1,10 @@
 import React from "react";
-import Input from "./Input";
+import Input from "./FormikInput.jsx";
 import { Link } from "react-router-dom";
 function passwordreset(){
     return (<>
         <form>
-            <Input type="email" placeholder="email address"/>
+            <input type="email" placeholder="email address"/>
             <button>send OTP</button>
         </form>
 <p>

@@ -28,18 +28,8 @@ cartarray.push({id:+cartkey[i],qty:cartvalues[cartkey[i]]})
 // const promis=getProductData(id);
   // promis.then(function(response){
     // return ("abc")
-  // })
-
-  
+  // }) 
 // }
-
-
-  
-
-
-
-
-  
   const [cartlist,setcartlist]=useState({});
 return(<div className="">
 <Link to="/">

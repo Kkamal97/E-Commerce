@@ -4,8 +4,8 @@ import {useState,useEffect} from "react";
 import {getProductList,getProductData} from "./api.jsx";
 import Products from "./Products";
 import {TbFidgetSpinner} from 'react-icons/tb';
-function AllData({onAddtoCart,cartvalues}){
-  
+function AllData({onAddtoCart,cartvalues,updatecart}){
+   
   const [productList,setproductList]=useState([]);
 
 useEffect(function(){
@@ -23,10 +23,10 @@ useEffect(function(){
     </div>)
            }
 
-  return (<div className="place-content-center my-4">
+  return (<div className="my-4 place-content-center">
  
     
-    <Products productList={productList}  onAddtoCart={onAddtoCart}/>
+    <Products productList={productList}  onAddtoCart={onAddtoCart} updatecart={updatecart}/>
   </div>)
 
 

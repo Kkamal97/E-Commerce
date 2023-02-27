@@ -6,7 +6,7 @@ import {BsCartPlus} from "react-icons/bs";
 import * as yup from 'yup';
 import { Link } from "react-router-dom";
 import tableicon from "./clipart.png";
-import Input from "./Input.jsx";
+import Input from "./FormikInput.jsx";
 function LoginPage(){
   const schema=yup.object().shape({
     email:yup.string().email(),
@@ -25,11 +25,11 @@ const {handleChange,values,handleSubmit,resetForm,errors,touched,handleBlur,isVa
   validationSchema:schema,
 });
   
- return(<div className="w-full items-center text-center ">
+ return(<div className="w-full items-center text-center   ">
 <img className="mx-auto w-96" src={tableicon}/>
 {/* <BsCartPlus className="text-center text-9xl"/> */}
   <form onSubmit={handleSubmit} >
-  <div className="flex flex-col md:flex-row items-center space-y-1.5 space-x-2 ">
+  <div className="flex flex-col md:flex-row items-center text-center space-y-1.5 space-x-2 ">
      
          <Input 
          id="email"

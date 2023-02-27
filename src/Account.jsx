@@ -13,7 +13,7 @@ return(<div className="items-center text-center ">
    
     <p>Already have account   
      
-        <a href="/account/Login" className="text-blue-400 underline hover:text-orange-700 hover:no-underline">         log in</a>
+        <Link to="/account/Login" className="text-blue-400 underline hover:text-orange-700 hover:no-underline">         log in</Link>
         
         </p>
         <p>new to bubuddy
