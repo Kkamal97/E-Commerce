@@ -25,6 +25,7 @@ Promise.all(myProductPromises).then(function(products1){
     },
     [cartvalues]);
     function handleRemove(event){
+        setLoading(true);
         const productid =event.currentTarget.getAttribute("productid");
         console.log("product to be removed",productid);
 
@@ -35,6 +36,7 @@ Promise.all(myProductPromises).then(function(products1){
         updatecart(newcartvalues);
     }
     function handleChange(e){
+        
  const newValue=+e.target.value;
  const newValueId=e.target.getAttribute('productid');
  console.log("new changed value is",newValue,"& id is ",newValueId)
@@ -47,6 +49,7 @@ Promise.all(myProductPromises).then(function(products1){
             return( <Loading />)        }
                 
 function handleUpdate(){
+    setLoading(true);
     updatecart(localCart);
             }
 

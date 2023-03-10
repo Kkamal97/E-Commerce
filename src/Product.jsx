@@ -5,28 +5,39 @@ import ProductDetail from "./ProductDetail.jsx"
 import {useState,useEffect} from "react";
 import {getProductList,getProductData} from "./api.jsx"
 import FinalMap from "./FinalMap.jsx"
+import Loading from "./Loading.jsx";
 
-function Product({productList}){
+function Product(){
 
+  const [productList,setproductList]=useState([]);
+  const [loading,setLoading]=useState(false);
+
+  if (!productList){
+        return(
+<Loading />
+        )
+               }
+  useEffect(function(){
+    const xyz=getProductList();
+    xyz.then(function(response){
+       setproductList(response.data.products);
+       setLoading(false);
+      })
+   
+  },[])
 
  const [searched1,setsearched1]=useState("")
   let data=productList.filter(function (item){
 return item.title.indexOf(searched1) != -1;
     
   })
-  
-
-  
-  
   function handlechange(event){
         return (setsearched1(event.target.value))
-      }
-  
+      }  
  const [sort,setsort]=useState("default")
   function handlesortchange (e){
     setsort(e.target.value);
       }
-
   if(sort=="lowtohigh"){
     data.sort(function(x,y){
       return(x.price-y.price)
@@ -46,8 +57,7 @@ return item.title.indexOf(searched1) != -1;
    data.sort(function(x,y){
       return(x.title<y.title)?1:-1
     })
-  }
-    
+  }    
 return(<div className="py-3">
   <div className="flex flex-row">
   <input placeholder="search items" onChange={handlechange} className="mx-3 text-sm text-center border border-gray-900 rounded-md"/>
@@ -61,19 +71,10 @@ return(<div className="py-3">
 </select>
  </div> 
   <div >
-   <FinalMap newproductList={data}/>
-    
-   
+   <FinalMap newproductList={data}/>   
     <button className="w-6 h-6 mx-1 text-xl border border-star text-star">1</button>
     <button className="w-6 h-6 mx-1 text-xl border border-star text-star">2</button>
 </div>
- 
-
 </div>)
-  
 }
-
-
-
-
 export default Product;

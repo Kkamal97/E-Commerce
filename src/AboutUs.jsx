@@ -7,7 +7,6 @@ return (
 <h3>meet our creative team</h3>
 <div className="flex">
     <img src={kamalphoto}/>
-    <img src={kamalphoto}/>
 </div>
 </>
 )

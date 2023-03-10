@@ -21,22 +21,19 @@ function App({productList}) {
 
  
 function handleAddToCart(productId,count){
-   // settotalcount(totalcount+count);
+  
 const oldcount=cart[productId] || 0;
   const newcart = {...cart,[productId]:oldcount + count};
   UpdateCart(newcart);
 
   
 
-  // const newcart={...cart};
-  // newcart[productId]=oldcount+ count;
-  // setcart(cart); 
 }  
 
-function UpdateCart(newcart){
-  const cartsave=JSON.stringify(newcart);
+function UpdateCart(Allnewcart){
+  const cartsave=JSON.stringify(Allnewcart);
   localStorage.setItem("my-cart",cartsave);
- setcart(newcart);
+ setcart(Allnewcart);
  }
 
 let totalcount;

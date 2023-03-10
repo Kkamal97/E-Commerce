@@ -13,6 +13,18 @@ module.exports = {
         "spin-size":"500px",
     
       },
+    padding:{
+      13:"52px",
+      25:"100px",
+      3.7:"15px"
+    },
+    width:{
+      17.5:"70px",
+    },
+    height:{
+      17.5:"70px"
+    }
+
     },
   },
   plugins: [],

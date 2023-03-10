@@ -4,7 +4,8 @@ import {Routes,Route} from "react-router-dom";
 import ProductDetail from "./ProductDetail.jsx";
 import SingleData from "./SingleData";
 import Account from "./Account.jsx";
-import Cart from "./Cart3.jsx";
+// import Cart from "./Cart3.jsx";
+import Cart from "./Cart4.jsx";
 import Noproductfound from "./Noproductfound.jsx";
 import HomePage from "./HomePage.jsx";
 import LoginPage from "./LoginPage1.jsx";
@@ -13,12 +14,12 @@ import AboutUs from "./AboutUs.jsx";
 import Passwordreset from "./Passwordreset.jsx";
 import Contact from "./ContactUs.jsx";
 
-function Products({productList,onAddtoCart,cartvalues,updatecart}){
-   
+function Products({onAddtoCart,cartvalues,updatecart}){
+  
 return (<div className="max-w-3xl mx-auto bg-white md:max-w-4xl ">
   <Routes>
     <Route path="/" element={<HomePage/>}/>
-    <Route path="/Products" element={<Product productList={productList}/>}></Route>
+    <Route path="/Products" element={<Product />}></Route>
     <Route path="/productdetail/:xyz" element={<SingleData onAddtoCart={onAddtoCart}/>}></Route>
     <Route path="/cart" element={<Cart updatecart={updatecart}/>}/>
  <Route path="/account/*" element={<Account/>}/>
