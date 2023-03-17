@@ -8,7 +8,6 @@ function Input({id,label,name, ...rest }){
     
     const {value,onChange,onBlur}=data;
     const {error,touched}=sata;
-    console.log(sata)
 return(<>
     <label htmlFor={id} className="sr-only">
         {label}
@@ -28,4 +27,4 @@ return(<>
 
 }
 export default Input;
-// className="relative block w-full h-10 placeholder-red-400  border border-red-700 appearance-none focus:red-800  focus:ring-indigo-500" 
+// className="relative block w-full h-10 placeholder-red-400 border border-red-700 appearance-none focus:red-800 focus:ring-indigo-500" 

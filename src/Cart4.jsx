@@ -37,11 +37,9 @@ if(loading) {
 function handleChange(e){
     const changed=+e.target.value;
     const id=e.target.getAttribute('id');
-    console.log("z",changed);
-    console.log("z1",id)
-    const newcopyCart={...copyCart,[id]:changed}
+        const newcopyCart={...copyCart,[id]:changed}
     setcopyCart(newcopyCart);
-    console.log('nyi wali check ke liye',newcopyCart)
+    
     }
 
 function handleUpdate(){
@@ -54,8 +52,8 @@ function handleUpdate(){
     <p>dukhra h kya</p>
     <CartList updatecart={updatecart} CartItems={CartItems} list={list} setlist={setlist} setLoading={setLoading} handleChange={handleChange} copyCart={copyCart}/>
     <Input placeholder="Coupon Code"/>
-<Button className="rounded-md bg-tomato text-white px-4 font-black">APPLY COUPON</Button>
-<Button onClick={handleUpdate} className="rounded-md bg-tomato text-white px-4 font-black">UPDATE CART</Button>
+<Button className="px-4 font-black text-white rounded-md bg-tomato">APPLY COUPON</Button>
+<Button onClick={handleUpdate} className="px-4 font-black text-white rounded-md bg-tomato">UPDATE CART</Button>
 <CartTotal />
 </>)
 }

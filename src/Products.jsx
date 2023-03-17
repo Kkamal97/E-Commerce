@@ -13,8 +13,8 @@ import SignupPage from  "./SignupPage1.jsx";
 import AboutUs from "./AboutUs.jsx";
 import Passwordreset from "./Passwordreset.jsx";
 import Contact from "./ContactUs.jsx";
-
-function Products({onAddtoCart,cartvalues,updatecart}){
+import Developer from "./Developer";
+function Products({onAddtoCart,cartvalues,updatecart,setUser}){
   
 return (<div className="max-w-3xl mx-auto bg-white md:max-w-4xl ">
   <Routes>
@@ -24,11 +24,12 @@ return (<div className="max-w-3xl mx-auto bg-white md:max-w-4xl ">
     <Route path="/cart" element={<Cart updatecart={updatecart}/>}/>
  <Route path="/account/*" element={<Account/>}/>
  <Route path="*" element={<Noproductfound/>}> </Route>
- <Route path="/account/Login" element={<LoginPage/>} />
- <Route path="/account/Signup" element={<SignupPage/>}/>
+ <Route path="/account/Login" element={<LoginPage setUser={setUser}/>} />
+ <Route path="/account/Signup" element={<SignupPage setUser={setUser}/>}/>
  <Route path="/AboutUs" element={<AboutUs/>}/>
  <Route path="/contactUs" element={<Contact/>}/>
  <Route path="/account/forgotpassword" element={<Passwordreset/>}/>
+ <Route path="/Developer" element={<Developer/>} />
 </Routes>
   
  

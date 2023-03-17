@@ -23,6 +23,9 @@ module.exports = {
     },
     height:{
       17.5:"70px"
+    },
+    fontFamily:{
+      myFont:'Arial',
     }
 
     },
