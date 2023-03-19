@@ -6,15 +6,12 @@ import logo from "./log.jpg";
 import OurInput from "./Input";
 import { useContext } from "react";
 import WithUser from "./WithUser";
-
-function TopNavbar({counter,user,setUser}){
- 
+function TopNavbar({counter,user,setUser}){ 
  function  handlelogOut(){
   setUser(undefined);
   localStorage.removeItem("token");
   //API call krke token invalid karna hai 
  }
-
   return(<div className="bg-white"  >
   <div className="flex max-w-3xl mx-auto md:max-w-4xl">      
     <img className="self-start w-20 " src={logo}/>
@@ -22,26 +19,8 @@ function TopNavbar({counter,user,setUser}){
       <OurInput  placeholder="search "/>
       </div>
       <div>
-      <div className="">
-       
-        {        
-       ( user
-        &&
-        <div className="flex flex-row justify-end text-xs text-blue-500">
-        <p> Hello {user.full_name}</p>
-        <span>
-        <button onClick={handlelogOut} className="ml-1 underline"> Logout</button>
-        </span>
-        </div>)
-        ||
-        (user
-          ||
-          <div className="flex flex-row justify-end text-xs text-blue-500">
-          <Link to="/account/Login">Please log in</Link>
-          </div>
-        )
-        }
-            
+      <div className="">       
+                  
       </div>
          <div className="self-center mx-3 space-x-6 ">
 <Link to="/" className="hover:text-orange-400">HOME</Link>
@@ -57,9 +36,7 @@ function TopNavbar({counter,user,setUser}){
     <BsBag className="text-6xl text-orange-400 hover:bg-orange-600"/>
     {user &&
     <p className="font-black -mt-9">{counter}</p>
-    }
-    
-        
+    }        
       </div>
       </Link>
       </div>
