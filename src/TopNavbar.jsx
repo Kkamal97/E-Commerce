@@ -30,7 +30,7 @@ function TopNavbar({counter,user,setUser}){
         <div className="flex flex-row justify-end text-xs text-blue-500">
         <p> Hello {user.full_name}</p>
         <span>
-        <button onClick={handlelogOut} className="ml-1"> Logout</button>
+        <button onClick={handlelogOut} className="ml-1 underline"> Logout</button>
         </span>
         </div>)
         ||
@@ -61,9 +61,6 @@ function TopNavbar({counter,user,setUser}){
       </Link>
       </div>
   </div>
-)
-  
+)  
 }
-
-
 export default TopNavbar;
