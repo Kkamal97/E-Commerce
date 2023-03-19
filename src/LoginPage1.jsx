@@ -8,7 +8,7 @@ import { Link, Navigate } from "react-router-dom";
 import tableicon from "./clipart.png";
 import Input from "./FormikInput.jsx";
 import axios from "axios";
-import { userData } from "./App";
+import WithUser from "./WithUser";
 
 const schema=yup.object().shape({
   email:yup.string().email(),
@@ -33,8 +33,8 @@ password:values.password
 
   console.log("fabricol se oye",values.email,"& password is ",values.password,"password length is",values.password.length)
     }
-export function LoginPage({handleSubmit,values,errors,touched,handleChange,handleBlur}){
-  const user=useContext(userData);
+export function LoginPage({handleSubmit,values,errors,touched,handleChange,handleBlur,user,setUser}){
+
 if(user){
   return(
     <Navigate to="/" />
@@ -61,6 +61,11 @@ if(user){
 </p>
     </>)
 }
- const myHoC=withFormik({validationSchema:schema,initialvalues:initialValues,handleSubmit:handlecallApi});
- const simpleLogin=myHoC(LoginPage)
- export default simpleLogin;
+//  const myHoC=withFormik({validationSchema:schema,initialvalues:initialValues,handleSubmit:handlecallApi});
+//  const simpleLogin=myHoC(LoginPage)
+//  export default simpleLogin;
+  const FormikLogin=withFormik({validationSchema:schema,
+    initialvalues:initialValues,
+    handleSubmit:handlecallApi
+  })(LoginPage);
+  export default WithUser(FormikLogin);

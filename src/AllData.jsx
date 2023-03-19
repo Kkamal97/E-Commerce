@@ -5,7 +5,8 @@ import {getProductList,getProductData} from "./api.jsx";
 import Products from "./Products";
 import {TbFidgetSpinner} from 'react-icons/tb';
 import { Navigate } from "react-router-dom";
-function AllData({onAddtoCart,cartvalues,updatecart,setUserName}){
+import TopNavbar from "./TopNavbar";
+function AllData({onAddtoCart,cartvalues,updatecart,setUserName,counter}){
    
 //   const [productList,setproductList]=useState([]);
 //   const [loading,setLoading]=useState(true);
@@ -29,10 +30,15 @@ function AllData({onAddtoCart,cartvalues,updatecart,setUserName}){
 
 
 
-  return (<div className="my-4 place-content-center">
+  return (<div className="flex flex-col bg-backcolor">
+  
+    <TopNavbar counter={counter} />
+    <div className="my-4 place-content-center">
  
     
     <Products   onAddtoCart={onAddtoCart} updatecart={updatecart} setUserName={setUserName}/>
+  </div>
+  
   </div>)
 
 

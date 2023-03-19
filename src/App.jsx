@@ -1,13 +1,13 @@
 import React,{useEffect} from 'react';
 import AllData from "./AllData";
-import TopNavbar from "./TopNavbar";
+
 import {useState} from "react";
 import { useContext } from 'react';
 import axios from "axios";
 import Loading from './Loading';
+import { createContext } from 'react';
 export const kamalcontext=React.createContext();
-export const jolo=React.createContext();
-export const userData=React.createContext();
+export const kamalcontext1=createContext();
 
 function App({productList}) {
   const oldcart=localStorage.getItem("my-cart");
@@ -19,8 +19,6 @@ function App({productList}) {
   const [loading,setloading]=useState(true);
    const token=localStorage.getItem("token");
 
-  
-
   useEffect(function (){
     if(token){
       const promise=axios.get("https://myeasykart.codeyogi.io/me",{
@@ -29,8 +27,7 @@ function App({productList}) {
   }
 })
 promise.then(function(response){
-  console.log("user detail milega re",response);
-  setUser(response.data);
+   setUser(response.data);
    setloading(false);
 }).catch(function(){
   console.log("invalid login")
@@ -46,7 +43,7 @@ else
       <Loading />
     )
   }
-  console.log("logged in user is",user);
+ 
  
 function handleAddToCart(productId,count){  
 const oldcount=cart[productId] || 0;
@@ -58,6 +55,7 @@ function UpdateCart(Allnewcart){
   localStorage.setItem("my-cart",cartsave);
  setcart(Allnewcart);
  }
+
 let totalcount;  
   if (Object.keys(cart).length>0){
  totalcount= Object.keys(cart).reduce(function(previous,current){
@@ -69,14 +67,15 @@ else {
  totalcount=0;
 }
 const cartvalues=cart; 
-  return (<div className="flex flex-col bg-backcolor"> 
+  return (<>
   {console.log("isko dekho",user)}
-     <TopNavbar counter={totalcount} user={user} setUser={setUser}/>
-     <userData.Provider value={user}>      
+    
+     <kamalcontext1.Provider value={{user,setUser}}>      
          <kamalcontext.Provider value={cartvalues}>          
-<AllData className="grow" onAddtoCart={handleAddToCart} updatecart={UpdateCart} setUser={setUser} />
+<AllData className="grow" onAddtoCart={handleAddToCart} updatecart={UpdateCart} setUser={setUser} counter={totalcount}/>
+{console.log("yoyo1",totalcount)}
          </kamalcontext.Provider>       
-     </userData.Provider> 
-  </div>
+     </kamalcontext1.Provider> 
+     </> 
   );
 }export default App;

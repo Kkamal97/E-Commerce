@@ -13,7 +13,7 @@ import SignupPage from  "./SignupPage1.jsx";
 import AboutUs from "./AboutUs.jsx";
 import Passwordreset from "./Passwordreset.jsx";
 import Contact from "./ContactUs.jsx";
-import Developer from "./Developer";
+import Developer from "./Developer.jsx";
 function Products({onAddtoCart,cartvalues,updatecart,setUser}){
   
 return (<div className="max-w-3xl mx-auto bg-white md:max-w-4xl ">

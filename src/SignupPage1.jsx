@@ -1,15 +1,35 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { useFormik,Formik,Form } from "formik";
 import Button from "./Button";
 import Input from "./FormikInput.jsx";
 import * as yup from "yup";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import tableicon from "./clipart.png";
-function signupPage(){
+import axios from "axios";
+import { kamalcontext1 } from "./App";
+import WithUser from "./WithUser";
+function signupPage({user,setUser}){
+    const [loading,setloading]=useState(true);
+console.log("aaale",user,setUser);
+if(user){
+    return(<Navigate to="/" />)
+}
 
    function signupApi(values){
-    
-        console.log("sending la")
+    const promse=axios.post("https://myeasykart.codeyogi.io/signup",
+    {       fullName:values.firstname,
+            email:values.emailadd,
+            password: values.confirmpassword
+        } )
+        promse.then(function (response){
+            console.log("chcha chicha",response)
+            setUser(response.data.user) ;            
+    localStorage.setItem("token",response.data.token);            
+        }).catch(function(){
+            console.log("nhi hua signUp")
+        })
+        console.log("sending la",
+        values.firstname, values.lastname, values.emailadd, values.confirmpassword)
     }
 const schema=yup.object().shape({
     firstname:yup.string().min(4),
@@ -48,4 +68,4 @@ confirmpassword:""
     </>
     )
 }
-export default signupPage;
+export default WithUser(signupPage) ;

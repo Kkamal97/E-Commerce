@@ -2,10 +2,10 @@ import React from "react";
 import lotusimage from "./lotus.jpg";
 import {Link, Navigate} from "react-router-dom";
 import { useContext } from "react";
-import { userData } from "./App";
-function HomePage(){
+import WithUser from "./WithUser";
+function HomePage({user,setUser}){
 
-    const user=useContext(userData);
+   
     if(!user){
         return(
           <Navigate to="/account/Login" />
@@ -29,4 +29,4 @@ function HomePage(){
     )
 }
 
-export default HomePage;
+export default WithUser(HomePage);

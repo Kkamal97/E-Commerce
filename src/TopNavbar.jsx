@@ -4,11 +4,11 @@ import {Link} from "react-router-dom";
 import photuk from "./Notfoundimage.jpg";
 import logo from "./log.jpg";
 import OurInput from "./Input";
-import { userData } from "./App";
 import { useContext } from "react";
+import WithUser from "./WithUser";
 
 function TopNavbar({counter,user,setUser}){
-  console.log("cham cham karti chadni",setUser)
+ 
  function  handlelogOut(){
   setUser(undefined);
   localStorage.removeItem("token");
@@ -55,7 +55,10 @@ function TopNavbar({counter,user,setUser}){
     <div className="flex flex-col items-center ">
       
     <BsBag className="text-6xl text-orange-400 hover:bg-orange-600"/>
+    {user &&
     <p className="font-black -mt-9">{counter}</p>
+    }
+    
         
       </div>
       </Link>
@@ -63,4 +66,4 @@ function TopNavbar({counter,user,setUser}){
   </div>
 )  
 }
-export default TopNavbar;
+export default WithUser(TopNavbar);
