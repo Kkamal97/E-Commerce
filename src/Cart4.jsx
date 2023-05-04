@@ -39,9 +39,10 @@ function handleChange(e){
         const newcopyCart={...copyCart,[id]:changed}
     setcopyCart(newcopyCart);    
     }
-function handleUpdate(){
+function handleUpdate(e){
     setLoading(true);
     updatecart(copyCart)
+    e.currentTarget.disabled=true;
 }
 
 if (!user){

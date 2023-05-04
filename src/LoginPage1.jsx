@@ -9,7 +9,8 @@ import tableicon from "./clipart.png";
 import Input from "./FormikInput.jsx";
 import axios from "axios";
 import WithUser from "./WithUser";
-
+import WithAlert from "./WithAlert";
+import withProvider from "./WithProvider";
 const schema=yup.object().shape({
   email:yup.string().email(),
   password:yup.string().min(8)
@@ -28,13 +29,17 @@ password:values.password
     localStorage.setItem("token",token);
     bag.props.setUser(user);
   }).catch(function(){
+    console.log("ye sabse andar wala",bag.props.setErrorMsg);
+    bag.props.setErrorMsg({type:"error",
+    msg:"dobara try kar"
+      });
     console.log("invalid credential");
   });
 
   console.log("fabricol se oye",values.email,"& password is ",values.password,"password length is",values.password.length)
     }
-export function LoginPage({handleSubmit,values,errors,touched,handleChange,handleBlur,user,setUser}){
-
+export function LoginPage({handleSubmit,values,errors,touched,handleChange,handleBlur,user,setUser,setErrorMsg}){
+console.log("error wala ye hai",setErrorMsg);
 if(user){
   return(
     <Navigate to="/" />
@@ -68,4 +73,4 @@ if(user){
     initialvalues:initialValues,
     handleSubmit:handlecallApi
   })(LoginPage);
-  export default WithUser(FormikLogin);
+  export default WithAlert(WithUser(FormikLogin));

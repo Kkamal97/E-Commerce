@@ -6,7 +6,7 @@ import { useContext } from 'react';
 import axios from "axios";
 import Loading from './Loading';
 import { createContext } from 'react';
-export const kamalcontext=React.createContext();
+export const kamalcontext=createContext();
 export const kamalcontext1=createContext();
 
 function App({productList}) {
@@ -73,7 +73,6 @@ const cartvalues=cart;
      <kamalcontext1.Provider value={{user,setUser}}>      
          <kamalcontext.Provider value={cartvalues}>          
 <AllData className="grow" onAddtoCart={handleAddToCart} updatecart={UpdateCart} setUser={setUser} counter={totalcount}/>
-{console.log("yoyo1",totalcount)}
          </kamalcontext.Provider>       
      </kamalcontext1.Provider> 
      </> 

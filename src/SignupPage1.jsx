@@ -6,10 +6,13 @@ import * as yup from "yup";
 import { Link, Navigate } from "react-router-dom";
 import tableicon from "./clipart.png";
 import axios from "axios";
-import { kamalcontext1 } from "./App";
+import { kamalcontext1 } from "./Context";
 import WithUser from "./WithUser";
-function signupPage({user,setUser}){
+import WithAlert from "./WithAlert";
+import withProvider from "./WithProvider";
+function signupPage({user,setUser,errorMsg,setErrorMsg}){
     const [loading,setloading]=useState(true);
+    console.log("eterrotmsg ko check",setErrorMsg );
 console.log("aaale",user,setUser);
 if(user){
     return(<Navigate to="/" />)
@@ -26,6 +29,7 @@ if(user){
             setUser(response.data.user) ;            
     localStorage.setItem("token",response.data.token);            
         }).catch(function(){
+            setErrorMsg({type:"error",msg:"sign nhi hua dobara try kar"});
             console.log("nhi hua signUp")
         })
         console.log("sending la",
@@ -68,4 +72,4 @@ confirmpassword:""
     </>
     )
 }
-export default WithUser(signupPage) ;
+export default WithAlert(WithUser(signupPage)) ;

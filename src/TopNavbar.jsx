@@ -20,7 +20,18 @@ function TopNavbar({counter,user,setUser}){
       </div>
       <div>
       <div className="">       
-                  
+      {        ( user        &&
+        <div className="flex flex-row justify-end text-xs text-blue-500 ">
+        <p> Hello {user.full_name}</p>
+        <span>
+        <button onClick={handlelogOut} className="ml-1 underline"> Logout</button>
+        </span>
+        </div>)        ||
+        (user           ||
+          <div className="flex flex-row justify-end text-xs text-blue-500">
+          <Link to="/account/Login">Please log in</Link>
+          </div>       )        } 
+  
       </div>
          <div className="self-center mx-3 space-x-6 ">
 <Link to="/" className="hover:text-orange-400">HOME</Link>

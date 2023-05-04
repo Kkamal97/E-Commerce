@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import {useState,useEffect} from "react";
 import {getProductList,getProductData} from "./api.jsx";
-import Products from "./Products";
+import ProductRoutes from "./ProductRoutes";
 import {TbFidgetSpinner} from 'react-icons/tb';
 import { Navigate } from "react-router-dom";
 import TopNavbar from "./TopNavbar";
@@ -34,9 +34,9 @@ function AllData({onAddtoCart,cartvalues,updatecart,setUserName,counter}){
   
     <TopNavbar counter={counter} />
     <div className="my-4 place-content-center">
- 
+
     
-    <Products   onAddtoCart={onAddtoCart} updatecart={updatecart} setUserName={setUserName}/>
+    <ProductRoutes   onAddtoCart={onAddtoCart} updatecart={updatecart} setUserName={setUserName}/>
   </div>
   
   </div>)
